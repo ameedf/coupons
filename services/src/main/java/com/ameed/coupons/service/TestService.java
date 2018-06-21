@@ -5,6 +5,7 @@ import com.ameed.coupons.dao.CouponDao;
 import com.ameed.coupons.dao.CustomerDao;
 import com.ameed.coupons.entities.Company;
 import com.ameed.coupons.entities.Coupon;
+import com.ameed.coupons.entities.CouponType;
 import com.ameed.coupons.entities.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -89,6 +90,8 @@ public class TestService {
         coupon.setStartDate(LocalDate.now().minusDays(random.nextInt(100)));
         coupon.setEndDate(LocalDate.now().plusDays(random.nextInt(100)));
         coupon.setTitle(createString("title"));
+        final CouponType[] values = CouponType.values();
+        coupon.setCouponType(values[random.nextInt(values.length)]);
         return coupon;
     }
 

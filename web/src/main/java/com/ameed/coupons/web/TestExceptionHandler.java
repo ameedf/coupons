@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class TestExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handle(Exception e) {
+        e.printStackTrace();
         return ResponseEntity.ok("ERROR: " + e.getMessage());
     }
 }

@@ -1,5 +1,6 @@
 package com.ameed.coupons.entities;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,9 @@ public class Coupon {
     private String title;
     private LocalDate startDate;
     private LocalDate endDate;
+
+    @Convert(converter = CouponTypeConverter.class)
+    private CouponType couponType;
 
     public Long getId() {
         return id;
@@ -49,5 +53,13 @@ public class Coupon {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public CouponType getCouponType() {
+        return couponType;
+    }
+
+    public void setCouponType(CouponType couponType) {
+        this.couponType = couponType;
     }
 }
