@@ -10,6 +10,7 @@
 	<modules>
 		<module>services</module>
 		<module>web</module>
+		<module>dao</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -28,6 +29,16 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.ameed.coupons</groupId>
+				<artifactId>dao</artifactId>
+				<version>1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ameed.coupons</groupId>
+				<artifactId>services</artifactId>
+				<version>1</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-parent</artifactId>
