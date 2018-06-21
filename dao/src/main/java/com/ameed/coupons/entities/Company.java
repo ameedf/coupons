@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,7 +21,7 @@ public class Company {
     private Long id;
     private String name;
     private String password;
-    @ManyToMany
+    @OneToMany
     @JoinTable(name = "COMPANY_COUPON",
             joinColumns = @JoinColumn(name = "COMPANY_ID"), // this class
             inverseJoinColumns = @JoinColumn(name = "COUPON_ID") // the other class

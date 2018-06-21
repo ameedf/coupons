@@ -25,6 +25,9 @@ public class CouponsController {
 
     @GetMapping("/test-generate-coupons")
     public Set<Coupon> generateCoupons() {
+        if ("".length() == 0) {
+            throw new TestException();
+        }
         return testService.generateCoupons();
     }
 
